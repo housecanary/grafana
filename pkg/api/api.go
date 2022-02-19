@@ -47,6 +47,7 @@ import (
 	"github.com/grafana/grafana/pkg/services/serviceaccounts"
 	"github.com/grafana/grafana/pkg/services/user"
 	"github.com/grafana/grafana/pkg/setting"
+	"github.com/grafana/grafana/pkg/usersync"
 	"github.com/grafana/grafana/pkg/web"
 )
 
@@ -656,4 +657,7 @@ func (hs *HTTPServer) registerRoutes() {
 	r.Get("/api/snapshots/:key", routing.Wrap(hs.GetDashboardSnapshot))
 	r.Get("/api/snapshots-delete/:deleteKey", reqSnapshotPublicModeOrSignedIn, routing.Wrap(hs.DeleteDashboardSnapshotByDeleteKey))
 	r.Delete("/api/snapshots/:key", reqSignedIn, routing.Wrap(hs.DeleteDashboardSnapshot))
+
+	extUserSync := usersync.ExtUserSyncAPI{LoginService: hs.Login, OrgService: hs.orgService}
+	r.Post("/apiext/users/sync", reqGrafanaAdmin, routing.Wrap(extUserSync.SyncUser))
 }

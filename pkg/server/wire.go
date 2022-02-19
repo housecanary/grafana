@@ -159,6 +159,7 @@ import (
 	"github.com/grafana/grafana/pkg/tsdb/prometheus"
 	"github.com/grafana/grafana/pkg/tsdb/tempo"
 	"github.com/grafana/grafana/pkg/tsdb/testdatasource"
+	"github.com/grafana/grafana/pkg/usersync"
 )
 
 var wireBasicSet = wire.NewSet(
@@ -361,6 +362,7 @@ var wireBasicSet = wire.NewSet(
 	supportbundlesimpl.ProvideService,
 	loggermw.Provide,
 	modules.WireSet,
+	usersync.ProvideService,
 )
 
 var wireSet = wire.NewSet(
