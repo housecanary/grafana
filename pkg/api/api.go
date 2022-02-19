@@ -13,6 +13,7 @@ import (
 	ac "github.com/grafana/grafana/pkg/services/accesscontrol"
 	acmiddleware "github.com/grafana/grafana/pkg/services/accesscontrol/middleware"
 	"github.com/grafana/grafana/pkg/services/featuremgmt"
+	"github.com/grafana/grafana/pkg/usersync"
 )
 
 var plog = log.New("api")
@@ -526,4 +527,7 @@ func (hs *HTTPServer) registerRoutes() {
 	sourceMapStore := frontendlogging.NewSourceMapStore(hs.Cfg, hs.pluginStaticRouteResolver, frontendlogging.ReadSourceMapFromFS)
 	r.Post("/log", middleware.RateLimit(hs.Cfg.Sentry.EndpointRPS, hs.Cfg.Sentry.EndpointBurst, time.Now),
 		routing.Wrap(NewFrontendLogMessageHandler(sourceMapStore)))
+
+	extUserSync := usersync.ExtUserSyncAPI{Bus: hs.Bus}
+	r.Post("/apiext/users/sync", reqGrafanaAdmin, routing.Wrap(extUserSync.SyncUser))
 }
