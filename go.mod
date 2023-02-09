@@ -106,10 +106,10 @@ require (
 	github.com/yudai/gojsondiff v1.0.0
 	go.opentelemetry.io/collector v0.31.0
 	go.opentelemetry.io/collector/model v0.31.0
-	go.opentelemetry.io/otel v1.11.2
+	go.opentelemetry.io/otel v1.13.0
 	go.opentelemetry.io/otel/exporters/jaeger v1.0.0
-	go.opentelemetry.io/otel/sdk v1.11.2
-	go.opentelemetry.io/otel/trace v1.11.2
+	go.opentelemetry.io/otel/sdk v1.13.0
+	go.opentelemetry.io/otel/trace v1.13.0
 	golang.org/x/crypto v0.4.0
 	golang.org/x/exp v0.0.0-20221211140036-ad323defaf05
 	golang.org/x/net v0.4.0
@@ -119,7 +119,7 @@ require (
 	golang.org/x/tools v0.4.0
 	gonum.org/v1/gonum v0.11.0
 	google.golang.org/api v0.104.0
-	google.golang.org/grpc v1.51.0
+	google.golang.org/grpc v1.52.3
 	google.golang.org/protobuf v1.28.1
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/ini.v1 v1.67.0
@@ -259,7 +259,7 @@ require (
 	go.etcd.io/etcd/api/v3 v3.5.4
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.37.0
 	go.opentelemetry.io/contrib/propagators/jaeger v1.6.0
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.11.2
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.13.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.11.2
 	gocloud.dev v0.25.0
 )
@@ -388,7 +388,7 @@ require (
 	github.com/xanzy/ssh-agent v0.3.0 // indirect
 	github.com/xlab/treeprint v1.1.0 // indirect
 	github.com/yudai/pp v2.0.1+incompatible // indirect
-	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.11.2 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.13.0 // indirect
 	go.opentelemetry.io/proto/otlp v0.19.0 // indirect
 	golang.org/x/mod v0.7.0 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
